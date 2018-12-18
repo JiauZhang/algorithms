@@ -1,0 +1,2 @@
+*.cpp linguist-language=cplusplus
+*.cc linguist-language=cplusplus
