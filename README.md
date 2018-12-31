@@ -1,5 +1,6 @@
 ## Data Structures and Algorithm in C++
 - [assignment_operator](src/assignment_operator.cpp)
+- [singleton](src/singleton.cpp)
 - [find_num](src/find_num.cpp)
 - [replace_blank](src/replace_blank.cpp)
 - [print_list_tail_to_head](src/print_list_tail_to_head.cpp)
@@ -10,6 +11,10 @@
 - [number_of_1_in_binary](src/number_of_1_in_binary.cpp)
 - [power](src/power.cpp)
 - [print_1_to_maximum_value](src/print_1_to_maximum_value.cpp)
+- [delete_node_in_list](src/delete_node_in_list.cpp)
+- [reorder_array](src/reorder_array.cpp)
+- [delete_kth_node_from_end](src/delete_kth_node_from_end.cpp)
+- [reverse_list](src/reverse_list.cpp)
 ## Attribute Test in C++
 - [map](attribute-test/map.cpp)
 
