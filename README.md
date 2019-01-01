@@ -15,6 +15,11 @@
 - [reorder_array](src/reorder_array.cpp)
 - [delete_kth_node_from_end](src/delete_kth_node_from_end.cpp)
 - [reverse_list](src/reverse_list.cpp)
+- [stack_push_pop_order](src/stack_push_pop_order.cpp)
+- [print_from_top_to_bottom](src/print_from_top_to_bottom.cpp)
 ## Attribute Test in C++
 - [map](attribute-test/map.cpp)
+- [static_and_array](attribute-test/static_and_array.cpp)
+- [constructor](attribute-test/constructor.cpp)
+- [rand](attribute-test/rand.cpp)
 
