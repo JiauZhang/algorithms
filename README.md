@@ -17,6 +17,8 @@
 - [reverse_list](src/reverse_list.cpp)
 - [stack_push_pop_order](src/stack_push_pop_order.cpp)
 - [print_from_top_to_bottom](src/print_from_top_to_bottom.cpp)
+- [sequence_of_bst](src/sequence_of_bst.cpp)
+- [path_in_tree](src/path_in_tree.cpp)
 ## Attribute Test in C++
 - [map](attribute-test/map.cpp)
 - [static_and_array](attribute-test/static_and_array.cpp)
