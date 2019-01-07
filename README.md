@@ -22,6 +22,8 @@
 - [copy_complex_list](src/copy_complex_list.cpp)
 - [convert_binary_search_tree](src/convert_binary_search_tree.cpp)
 - [string_permutation](src/string_permutation.cpp)
+- [more_than_half_number](src/more_than_half_number.cpp)
+- [k_least_numbers](src/k_least_numbers.cpp)
 ## Attribute Test in C++
 - [map](attribute-test/map.cpp)
 - [static_and_array](attribute-test/static_and_array.cpp)
