@@ -1,0 +1,10 @@
+1. gcc: error trying to exec 'cc1plus': execvp: 没有那个文件或目录
+ 解决方法：安装g++
+2. printf_gcc.cpp:(.text+0x41)：对‘std::cout’未定义的引用
+printf_gcc.cpp:(.text+0x46)：对‘std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*)’未定义的引用
+printf_gcc.cpp:(.text+0x4b)：对‘std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&)’未定义的引用
+printf_gcc.cpp:(.text+0x53)：对‘std::ostream::operator<<(std::ostream& (*)(std::ostream&))’未定义的引用
+/tmp/ccS0MaAK.o：在函数‘__static_initialization_and_destruction_0(int, int)’中：
+printf_gcc.cpp:(.text+0x95)：对‘std::ios_base::Init::Init()’未定义的引用
+printf_gcc.cpp:(.text+0xa4)：对‘std::ios_base::Init::~Init()’未定义的引用
+解决办法：用g++编译程序
