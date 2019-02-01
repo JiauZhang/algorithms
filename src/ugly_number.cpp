@@ -26,6 +26,7 @@ int getUglyNumber(int index)
 {
 	if (index <= 0)
 		return -1;
+
 	int count = 0;
 	int num = 0;
 	while (count < index) {
@@ -35,6 +36,42 @@ int getUglyNumber(int index)
 	}
 
 	return num;
+}
+
+int min(int num1, int num2, int num3)
+{
+	int temp = (num1 > num2) ? num2 : num1;
+	temp = (temp < num3) ? temp : num3;
+
+	return temp;
+}
+//此方法速度比较快，但是浪费内存，用空间换时间
+int _getUglyNumber_(int index)
+{
+	if (index <= 0)
+		return -1;
+
+	int *ugly_numbers = new int[index];
+	int *f2 = ugly_numbers;
+	int *f3 = ugly_numbers;
+	int *f5 = ugly_numbers;
+	ugly_numbers[0] = 1;
+	int next_ugly_number = 1;
+
+	while (next_ugly_number < index) {
+		ugly_numbers[next_ugly_number] = min(*f2*2, *f3*3, *f5*5);
+		while (*f2*2 <= ugly_numbers[next_ugly_number])
+			f2++;
+		while (*f3*3 <= ugly_numbers[next_ugly_number])
+			f3++;
+		while (*f5*5 <= ugly_numbers[next_ugly_number])
+			f5++;
+
+		next_ugly_number++;
+	}
+	
+	delete[] ugly_numbers;
+	return ugly_numbers[index-1];
 }
 
 int main(int argc, char **argv)
@@ -48,7 +85,16 @@ int main(int argc, char **argv)
 	Test(numbers[4]);
 
 	int num_idx = getUglyNumber(5);
-	cout << "num_idx: " << num_idx << endl;
+	cout << "getUglyNumber num_idx: " << num_idx << endl;
+
+	num_idx = _getUglyNumber_(5);
+	cout << "_getUglyNumber_ num_idx: " << num_idx << endl;
+
+	num_idx = getUglyNumber(25);
+	cout << "getUglyNumber num_idx: " << num_idx << endl;
+
+	num_idx = _getUglyNumber_(25);
+	cout << "_getUglyNumber_ num_idx: " << num_idx << endl;
 
 	return 0;
 }
