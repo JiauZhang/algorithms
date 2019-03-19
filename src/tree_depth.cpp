@@ -21,6 +21,48 @@ int treeDepth(BinaryTreeNode *root)
 	}
 }
 
+bool isBalanced(BinaryTreeNode *root)
+{
+	if (root == NULL)
+		return true;
+		
+	int left = treeDepth(root->left);
+	int right = treeDepth(root->right);
+	int diff = left - right;
+	
+	if (diff < -1 || diff > 1)
+		return false;
+		
+	return isBalanced(root->left) && isBalanced(root->right);
+} 
+
+bool isBalanced_(BinaryTreeNode *root, int *depth)
+{
+	if (root == NULL) {
+		*depth = 0;
+		return true;
+	}
+	
+	int left, right;
+	if (isBalanced_(root->left, &left) && isBalanced_(root->right, &right)) {
+		int diff = left - right;
+		if (diff < -1 || diff > 1) {
+			return false;
+		}
+		
+		*depth = (left > right) ? (left + 1) : (right + 1);
+		return true;
+	}
+	
+	return false;
+}
+
+bool isBalanced_(BinaryTreeNode *root)
+{
+	int depth;
+	return isBalanced_(root, &depth);	
+}
+
 int main(int argc, char **argv)
 {
 	BinaryTreeNode *root = new struct BinaryTreeNode;
@@ -41,6 +83,12 @@ int main(int argc, char **argv)
 	root->left->right->left = left;
 	
 	cout << "tree depth: " << treeDepth(root) << endl;
+	
+	bool balan = isBalanced(root);
+	cout << "is balanced: " << balan << endl;
+	
+	balan = isBalanced_(root);
+	cout << "is balanced: " << balan << endl;
 	
 	return 0;
 }
