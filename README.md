@@ -1,4 +1,4 @@
-## Data Structures and Algorithm in C++
+## Data Structures and Algorithms in C/C++
 - [assignment_operator](src/assignment_operator.cpp)
 - [singleton](src/singleton.cpp)
 - [find_num](src/find_num.cpp)
