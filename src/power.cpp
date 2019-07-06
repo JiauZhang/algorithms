@@ -52,17 +52,71 @@ double power_v2(double base, int exp)
 	}
 }
 
+double power_v3(double base, int exp)
+{
+	// only test algorithm, dont care safty !
+	if (exp == 0)
+		return 1;
+	if(equal(base, 0.0)) // && exp > 0)
+    	return base;
+    
+    double part1 = 1.0;
+    double part2 = 1.0;
+    
+    bool negative = false;
+	if (exp < 0) {
+		negative = true;
+		exp = -exp;
+	}
+    
+    if (exp & 0x01) {
+    	part1 = base;
+    	exp -= 1;
+	}
+    
+    if (exp) {
+    	part2 = base;
+    	exp = exp >> 1;
+	}	
+    
+	while (exp) {
+		part2 = part2 * part2;
+		exp = exp >> 1;
+	}
+	
+	if (negative) {
+		return 1 / (part1 * part2);
+	} else {
+		return part1 * part2;
+	}	
+	
+}
+
 void Test(double base)
 {
+	cout << "power_v2" << endl;
 	cout << power_v2(base, 0) << endl;
 	cout << power_v2(base, 1) << endl;
 	cout << power_v2(base, 2) << endl;
 	cout << power_v2(base, 5) << endl;
 	
+	cout << "power_v3" << endl;
+	cout << power_v3(base, 0) << endl;
+	cout << power_v3(base, 1) << endl;
+	cout << power_v3(base, 2) << endl;
+	cout << power_v3(base, 5) << endl;
+	
+	cout << "power_v2" << endl;
 	cout << power_v2(base, -0) << endl;
 	cout << power_v2(base, -1) << endl;
 	cout << power_v2(base, -2) << endl;
 	cout << power_v2(base, -5) << endl;
+	
+	cout << "power_v3" << endl;
+	cout << power_v3(base, -0) << endl;
+	cout << power_v3(base, -1) << endl;
+	cout << power_v3(base, -2) << endl;
+	cout << power_v3(base, -5) << endl;
 }
 
 int main(int argc, char** argv)
