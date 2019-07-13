@@ -6,6 +6,7 @@
 #include "shell.hpp"
 #include "straight_select.hpp"
 #include "heap.hpp"
+#include "merge.hpp"
 
 /*	复杂度：					时间复杂度   空间复杂度 
 	交换排序： 
@@ -30,7 +31,7 @@ void showme(int *data, int length)
 int main(int argc, char** argv) 
 {
 	int data[17] = {6, 6, 38, 1, 9, -1, 6, 8, 4, 7, 9, 66, -5, 11, 64, 22, 44};
-	const int nums = 17;
+	const int nums = 9;
 	//BubbleSort<int>::sort(data, nums);
 	//showme(data, nums);
 	/* nums = 13 会出错，为何？ */
@@ -43,7 +44,13 @@ int main(int argc, char** argv)
 	//ShellSort<int>::sort(data, nums);
 	//showme(data, nums);
 	
-	StraightSelectSort<int>::sort(data, nums);
+	//StraightSelectSort<int>::sort(data, nums);
+	//showme(data, nums);
+	
+	//HeapSort<int>::sort(data, nums);
+	//showme(data, nums);
+	
+	MergeSort<int>::sort(data, nums);
 	showme(data, nums);
 	
 	return 0;
