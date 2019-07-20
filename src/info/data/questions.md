@@ -175,7 +175,7 @@ and so on. A conic provides five constraints on a 2D homography
 81. [grid map](https://link.zhihu.com/?target=https%3A//github.com/ANYbotics/grid_map)
 82. Homography和Fundamental Matrix的区别，包括二者区别，几个自由度，为什么是这么多自由度，怎么计算，这些在多视图几何那本书中都有
 83. 视差与深度的关系。在相机完成校正后，则有d/b=f/z,其中d表示视差，b表示基线，f是焦距，z是深度
-84. PNP算法、简述EPnP算法的大致步骤
+84. PNP算法、简述 EPnP 算法的大致步骤
 85. ORBSLAM的初始化方式
 86. ORB特征点与SIFT、SURF的区别、ORB特征点的特性
 87. vins初始化是如何完成的？vins中是如何将IMU数据与camera融合到一起的？简述一下vins的大致框架
@@ -374,7 +374,7 @@ and so on. A conic provides five constraints on a 2D homography
      现在想取出两个文件中时间戳最接近的数据，并分别存放在gps2.txt和laser2.txt中，编写程序实现。
 132. 我们知道相机的内参有 fx, fy, cx, cy, 畸变参数(只考虑k1, k2)，相对世界坐标原点外参T。
      如果我们现在对相机拍摄的图片进行2倍的下采样，那么这些参数会如何变化？
-133. 
+133. OC-EKF 中的可观性约束
 
 ### 算法数据结构&C++
 1. ORB-SLAM的共视图是什么结构？内部如何存储的？
@@ -525,6 +525,7 @@ and so on. A conic provides five constraints on a 2D homography
 14. Mser、Swt检测
 15. 图像分割（Grabcut）
 16. 目标跟踪（相关滤波KCF）
+17. 直方图均衡化图像
 
 ### 非技术问题
 1. 自我介绍、性格缺点、最有成就感的经历、最大的挫折之类、职业规划、为什么选择我们公司等问题，一定要准备到滚瓜烂熟。
