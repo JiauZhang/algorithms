@@ -132,7 +132,53 @@ and so on. A conic provides five constraints on a 2D homography
 66. 闭环检测常用方法（orb、lsd、深度学习）
 67. 单目的初始化（拓展：双目，RGBD，VIO的初始化及传感器标定）
 68. 简述一下Bundle Adjustment的过程
-69. SVO、LSD中深度滤波器原理
+69. SVO、LSD中深度滤波器原理、inverse compositional algorithm
+```
+(1) SVO深度滤波器原理
+    首先假设传感器单次观测模型符合 高斯+均匀分布 混合模型
+    主要参数包括：
+        测量值为内点的概率为 \pi, 此时分布符合均值 为真正深度 Z 的高斯分布
+        测量值为外点时概率为 1-\pi, 此时分布符合可能的最大深度和最小深度间的均匀分布
+    p(x_n|Z,π) = πN(x_n|Z,τ_n^2) + (1−π)U(x_n|Zmin,Zmax) ---> (1)
+    其中 \tau_n^2 为一个像素所代表的深度变化
+    为了使用观测估计真实深度值，即后验，这里使用 Beta分布 与 高斯分布 近似后验分布
+    q(Z,π|an, bn, µn, σn) := Beta (π|an, bn) N(Z|µn, σn2) 
+    当有新的观测产生时，后验参数符合下式
+    q(Z, π|a_new,b_new,µ_new,σ_new^2) = p(x|Z, π)q(Z, π|a_old,b_old,µ_old,σ_old^2) (2)
+    然后将传感器观测模型 (1) 带入 (2) 可得
+    q(Z, π|a_new,b_new,µ_new,σ_new^2) = 
+            (πN(x|Z, σ_old^2) + (1-π)U(x))N(Z|µ_old, σ_old^2)Beta(π|a_old, b_old)  (3)
+    然后使用等式 (3) 等号左边和右边分别计算关于待估计参数 Z 和 π 一阶、二阶距
+    由此可建立 新的参数 与 旧的参数 之间的4个等式关系，正好解除四个新的参数
+    即得到了参数的更新方程
+```
+```c++
+double DepthFilter::computeTau(
+      const SE3& T_ref_cur,
+      const Vector3d& f,
+      const double z,
+      const double px_error_angle)
+{
+  Vector3d t(T_ref_cur.translation());
+  // 三角形的一个边
+  Vector3d a = f*z-t;
+  double t_norm = t.norm();
+  double a_norm = a.norm();
+  // 点乘公式反求三角形第一个内角
+  double alpha = acos(f.dot(t)/t_norm);
+  // 三角形第二个内角
+  double beta = acos(a.dot(-t)/(t_norm*a_norm));
+  // 对三角形原始第二个内角度进行一个像素角度的扰动
+  double beta_plus = beta + px_error_angle;
+  // 扰动后的三角形第三个内角
+  double gamma_plus = PI-alpha-beta_plus;
+  // 扰动后的深度
+  double z_plus = t_norm*sin(beta_plus)/sin(gamma_plus);
+  // 深度变化量
+  return (z_plus - z);
+}
+```
+
 70. 说一说某个SLAM框架的工作原理（svo、orb、lsd）及其优缺点，如何改进？
 ```
 缺点：
@@ -199,7 +245,8 @@ and so on. A conic provides five constraints on a 2D homography
 101. 你了解图优化吗？能简单介绍一下吗？
 102. 你了解ORBSLAM吗？能否具体介绍一下，你作为一名工程师，打算从那几个方面去优化它呢？或者有哪些可以创新的地方？
 103. 你刚才提到vins的最新版本是vins_fusion，能具体介绍一下这个方案吗？
-104. SLAM方向常用的技术要熟，RANSAC、pinhole camera model、reprojection error是必准备的，P3P、ICP、李群的基础知识（比如SO3）考的概率也很高。有些细节也可能考，比如RANSAC的iteration怎么算，P3P问题有几个解等。
+104. SLAM方向常用的技术要熟，RANSAC、pinhole camera model、reprojection error是必准备的，
+     P3P、ICP、李群的基础知识（比如SO3）考的概率也很高。有些细节也可能考，比如RANSAC的iteration怎么算，P3P问题有几个解等。
 105. SLAM中用的数值线性代数，比如QR、共轭梯度、舒尔补等。
 106. 如何对匹配好的点做进一步的处理，更好保证匹配效果
 ```
@@ -375,6 +422,7 @@ and so on. A conic provides five constraints on a 2D homography
 132. 我们知道相机的内参有 fx, fy, cx, cy, 畸变参数(只考虑k1, k2)，相对世界坐标原点外参T。
      如果我们现在对相机拍摄的图片进行2倍的下采样，那么这些参数会如何变化？
 133. OC-EKF 中的可观性约束
+134. 各种雅克比矩阵的计算
 
 ### 算法数据结构&C++
 1. ORB-SLAM的共视图是什么结构？内部如何存储的？
@@ -509,9 +557,60 @@ and so on. A conic provides five constraints on a 2D homography
 16. 递推法求数学期望，反证法，数学归纳法等
 
 ### 传统图像处理问题
-1. 图像平滑算子、边缘检测算子
+1. [图像平滑算子、边缘检测算子](https://www.cnblogs.com/lynsyklate/p/7881300.html)
+```
+Roberts(交叉梯度算子): 对具有陡峭的低噪声图像处理效果较好，但提取的边缘较粗，因此边缘定位不准确
+       Roberts交叉梯度算子由两个2×2的模版构成 [-1, 0; 0, 1] [0, -1; 1, 0]
+Sobel: 对灰度渐变和噪声较多的图像处理效果较好，Sobel算子对边缘定位比较准确，Sobel算子根据像素点上下、左右邻点灰度加权差，
+       在边缘处达到极值这一现象检测边缘。对噪声具有平滑作用，提供较为精确的边缘方向信息，边缘定位精度不够高。
+       当对精度要求不是很高时，是一种较为常用的边缘检测方法。相比Prewitt他周边像素对于判断边缘的贡献是不同的.
+       [-1, -2, -1; 0, 0, 0; 1, 2, 1] [-1, 0, 1; -2, 0, 2; -1, 0, 1]
+Kirsch: 对灰度渐变和噪声较多的图像处理效果较好
+Prewitt: 对灰度渐变和噪声较多的图像处理效果较好, Prewitt算子是一种3×3模板的算子,它有两种形式,分别表示水平和垂直的梯度
+         [-1, -1, -1; 0, 0, 0; 1, 1, 1] [-1, 0, 1; -1, 0, 1; -1, 0, 1]
+Laplacian: 对图像中的阶跃性边缘点定位准确，对噪声非常敏感，丢失一部分边缘的方向信息，噪声检测的边缘不连续
+LoG: 对噪声敏感，很少用于边缘检测，而是用来判断边缘像素是位于图像的明区还是暗区
+Canny: 不易受噪声的干扰，能够检测到真正的弱边缘，Canny是最有效的边缘检测方法，优点在于使用两种不同的阈值分别
+       检测强边缘和弱边缘，且仅当弱边缘与强边缘相连时才使用弱边缘，因此该方法不容易被噪声干扰，容易检测真正的弱边缘
+       Canny边缘检测算法的实现较为复杂,主要分为以下步骤       
+       (1)高斯模糊
+       (2)计算梯度幅值和方向
+       (3)非极大值 抑制
+       (4)滞后阈值
+```
 2. 图像去噪滤波算法（高斯、均值、双边、Guide filter）
-3. 三个度量patch相似度的方法（SSD、SAD、NCC）
+3. [三个度量patch相似度的方法(SSD、SAD、NCC)](https://blog.csdn.net/hujingshuang/article/details/47759579)
+```
+平均绝对差算法(MAD: Mean Absolute Differences):
+子图与模板图对应位置上，灰度值之差的绝对值总和，再求平均，实质：是计算的是子图与模板图的L1距离的平均值
+缺点: 对噪声非常敏感
+
+绝对误差和算法(SAD: Sum of Absolute Differences):
+与MAD类似，少了求均值这一步
+
+误差平方和算法(SSD: Sum of Squared Differences):
+实际上，SSD算法与SAD算法如出一辙，只是其相似度测量公式有一点改动（计算的是子图与模板图的L2距离）
+
+平均误差平方和算法(MSD: Mean Square Differences):
+比SSD多了一个求均值的步骤，其他相同
+
+归一化积相关算法(NCC: Normalized Cross Correlation):
+\frac{\Sigma\Sigma{S(i, j)*T(i, j}}{\sqrt{\Sigma\Sigma{S(i, j)^2*T(i, j}^2}}
+
+序贯相似性检测算法(SSDA: Sequential Similiarity Detection Algorithm):
+(1) 误差计算为对应位置的去均值光度误差绝对值
+(2) 设定阈值 Th
+(3) 在模板中随机选择不重复的像素点，计算误差累计和，当误差累加值超过了Th时，记下累加次数H，并停止对该 patch 的计算
+(4) 在计算过程中，随机点的累加误差和超过了阈值（记录累加次数H）后，则放弃当前子图转而对下一个子图进行计算。
+    遍历完所有子图后，选取最大R值所对应的(i,j)子图作为匹配图像【若R存在多个最大值（一般不存在），
+    则取累加误差最小的作为匹配图像】。
+
+ZMSSD:
+(1) SA = mnTemplateSum
+(2) SB = nImageSum
+(3) N = mnPatchSize * mnPatchSize   nCrossSum += n * templatepointer[nCol]
+(4) ZMSSD = ((2*SA*SB - SA*SA - SB*SB)/N + nImageSumSq + mnTemplateSumSq - 2*nCrossSum)
+```
 4. 二进制描述子
 5. 计算描述子距离函数
 6. 描述一下SIFT或者SURF特征检测、匹配
