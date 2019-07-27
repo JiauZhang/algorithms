@@ -153,6 +153,8 @@ and so on. A conic provides five constraints on a 2D homography
     即得到了参数的更新方程
 ```
 ```c++
+// 之所以每次都要重新计算 \tau 的值
+// 是因为这里涉及到两帧间的平移 t，而这是一个变量，故需要每次都重新计算 \tau
 double DepthFilter::computeTau(
       const SE3& T_ref_cur,
       const Vector3d& f,
@@ -216,6 +218,14 @@ double DepthFilter::computeTau(
 76. 双目测距范围Z=fb/d。问题： 640*480，fov＝90°，zmax＝10m，最小视差为2，求使zmax稳定的最小基线长度（6.25cm）
 77. 特征点法与直接法误差模型、Jacobian推导
 78. 光流的假设、仿射变换、4种方法，svo采取的方法，优势何在
+```
+SVO、PTAM仿射变换计算方法：
+(1) 现将目标点从参考帧投影到当前帧
+(2) 对参考帧目标点进行扰动，SVO是进行一个 halfpatch_size 的扰动，而 PTAM 是进行一个像素的扰动
+(3) 将 u、v 方向上扰动后的点分别都应到当前帧
+(4) 扰动后的当前帧坐标 - 目标点当前帧坐标，然后按列排放构成 4*4 的仿射变换矩阵
+注：SVO计算得到的仿射每个列需要 除以 halfpatch_size
+```
 79. MSCKF与ROVIO、MSCKF与预积分（structureless factor）
 80. 边缘化方式原理
 81. [grid map](https://link.zhihu.com/?target=https%3A//github.com/ANYbotics/grid_map)
@@ -569,7 +579,7 @@ Kirsch: 对灰度渐变和噪声较多的图像处理效果较好
 Prewitt: 对灰度渐变和噪声较多的图像处理效果较好, Prewitt算子是一种3×3模板的算子,它有两种形式,分别表示水平和垂直的梯度
          [-1, -1, -1; 0, 0, 0; 1, 1, 1] [-1, 0, 1; -1, 0, 1; -1, 0, 1]
 Laplacian: 对图像中的阶跃性边缘点定位准确，对噪声非常敏感，丢失一部分边缘的方向信息，噪声检测的边缘不连续
-LoG: 对噪声敏感，很少用于边缘检测，而是用来判断边缘像素是位于图像的明区还是暗区
+LoG: 对噪声敏感，很少用于边缘检测，而是用来判断边缘像素是位于图像的明区还是暗区，可以使用DOG近似
 Canny: 不易受噪声的干扰，能够检测到真正的弱边缘，Canny是最有效的边缘检测方法，优点在于使用两种不同的阈值分别
        检测强边缘和弱边缘，且仅当弱边缘与强边缘相连时才使用弱边缘，因此该方法不容易被噪声干扰，容易检测真正的弱边缘
        Canny边缘检测算法的实现较为复杂,主要分为以下步骤       
