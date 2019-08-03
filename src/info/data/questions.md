@@ -41,8 +41,8 @@
 41. 什么是ORB特征，ORB特征的旋转不变性是如何做的，BRIEF算子是怎么提取的。
 42. 如果把一张图像去畸变，写公式，流程。
 43. ORB-SLAM中的特征是如何提取的？如何均匀化的？
-45. [连通区域算法](https://link.zhihu.com/?target=http%3A//blog.csdn.net/icvpr/article/details/10259577)
-46. [实现RANSAC的框架](https://github.com/MRPT/mrpt/libs/base/src/math/ransac.cpp)
+45. [连通区域算法](https://blog.csdn.net/icvpr/article/details/10259577)
+46. [实现RANSAC的框架](https://github.com/MRPT/mrpt/blob/master/libs/math/src/ransac.cpp)
 47. Homography和Fundamentalmatrix的性质与区别
 48. 简单实现cv::Mat()
 49. 简述一下牛顿法、GN、LM等优化方法的区别
@@ -216,6 +216,11 @@ double DepthFilter::computeTau(
 ```
 75. 常见滤波方法的对比（KF、EKF、IEKF、UKF、PF）
 76. 双目测距范围Z=fb/d。问题： 640*480，fov＝90°，zmax＝10m，最小视差为2，求使zmax稳定的最小基线长度（6.25cm）
+```
+首先，画出相机模型，一个点，一个长方形，由于视场角为90，所以光轴与光心与长方形边之间的夹角为45度
+然后像平面光点向长方形边做垂线，由此构成的直角三角形，再根据45度可得到焦距f=640/2=320
+再根据z_{max} = fb/d = 320b/2 = 10m, 可解的 b = 0.0625m
+```
 77. 特征点法与直接法误差模型、Jacobian推导
 78. 光流的假设、仿射变换、4种方法，svo采取的方法，优势何在
 ```
@@ -230,7 +235,12 @@ SVO、PTAM仿射变换计算方法：
 80. 边缘化方式原理
 81. [grid map](https://link.zhihu.com/?target=https%3A//github.com/ANYbotics/grid_map)
 82. Homography和Fundamental Matrix的区别，包括二者区别，几个自由度，为什么是这么多自由度，怎么计算，这些在多视图几何那本书中都有
-83. 视差与深度的关系。在相机完成校正后，则有d/b=f/z,其中d表示视差，b表示基线，f是焦距，z是深度
+83. 视差与深度的关系。
+```
+在相机完成校正后，则有d/b=f/z,其中d表示视差，b表示基线，f是焦距，z是深度
+视差越大，深度越小，由于视差最小为一个像素，所以基线确定后，双目相机的
+最大深度也就确定了，z_max = \frac{fb}{d} = fb
+```
 84. PNP算法、简述 EPnP 算法的大致步骤
 85. ORBSLAM的初始化方式
 86. ORB特征点与SIFT、SURF的区别、ORB特征点的特性
@@ -514,7 +524,7 @@ RGB-D相机：
 133. OC-EKF 中的可观性约束
 134. 各种雅克比矩阵的计算
 
-### 算法数据结构&C++
+### 算法数据结构(C++)
 1. ORB-SLAM的共视图是什么结构？内部如何存储的？
 2. 写一个四叉树的结构
 3. 不用递归遍历二叉树
@@ -549,8 +559,9 @@ RGB-D相机：
     其中vector表示一段连续的内存地址，基于数组的实现，list表示非连续的内存，基于链表实现。
     deque（双端队列）与vector类似，但是对于首元素提供删除和插入的双向支持。关联容器主要有map和set。
     map是key-value形式的，set是单值。map和set只能存放唯一的key值，multimap和multiset可以存放重复key值。
+	map 和 multimap 查询时间复杂度为 O(logN)
     vector 的底层为顺序表（数组），list 的底层为双向链表，deque 的底层为循环队列，set 的底层为红黑树，
-    hash_set 的底层为哈希表。
+    unorder_set、unorder_map、hash_set 的底层为哈希表，查询时间复杂度为: O(1)
 ```
 27. vector扩充方式，size与capacity区别
 ```
@@ -627,6 +638,11 @@ RGB-D相机：
 (4) 重载，是指允许存在多个同名函数，而这些函数的参数表不同
     或许参数个数不同，或许参数类型不同，或许两者都不同
 ```
+83. 双精度浮点数的加法符合交换律，不符合结合律
+84. KMP求公共字符串
+85. 在intel CPU上，以下多线程对int型变量 `x=1` 是原子操作
+86. 使用 KMP 算法在一长度为N 的字符串中寻找长度为 M 的子字符串的时间复杂度为: N+M
+87. 在一长度为 N 的有序数列中寻找两个数，使得两数之和等于某指定值的最快的算法的平均时间复杂度为: N
 
 ### 数学问题
 1. 一层楼共有n级台阶，一次可以上至少一级但不超过m级台阶，求有多少种不同的上楼方案数。由于结果可能很大，你只需要输出结果对10007取模的值即可
@@ -710,7 +726,7 @@ ZMSSD:
 10. 颜色直方图统计，手撕代码
 11. 形态学操作，手撕代码
 12. 积分图，手撕代码连
-13. 通区域算法，给二值图，求出最大联通区域（用深度优先和广度优先算法，手撕代码）
+13. 连通区域算法，给二值图，求出最大连通区域（用深度优先和广度优先算法，手撕代码）
 14. Mser、Swt检测
 15. 图像分割（Grabcut）
 16. 目标跟踪（相关滤波KCF）
