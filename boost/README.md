@@ -1,4 +1,9 @@
 ### Boost 多线程编程
+#### boost 路径
+```c++
+/usr/lib/x86_64-linux-gnu/libboost_*
+```
+
 #### 01_basic_thread
 1. 知识点
 ```c++
@@ -68,3 +73,44 @@ Boost.Thread定义了一系列的中断点，例如 sleep() 函数。
 	parallel thread: 4
 ```
 如果需要线程响应 interrupt ，那么该线程中必须存在能够响应 interrupt 的函数才可以。
+
+#### 03_mutex
+1. 知识点
+```c++
+互斥信号量 boost::mutex mutex;
+获得信号量 mutex.lock();
+释放信号量 mutex.unlock();
+
+标准输出流是一个 全局性的 被所有线程共享的对象。 
+该标准不提供任何保证 std::cout 可以安全地从多个线程访问。 
+因此，访问标准输出流必须同步：在任何时候，只有一个线程可以访问 std::cout。
+```
+
+#### 04_lock
+1. 知识点
+```c++
+boost::lock_guard<boost::mutex> lock(mutex);
+boost::lock_guard 在其内部构造和析构函数分别自动调用 lock() 和 unlock()
+故不需要手动进行 lock() 和 unlock() 操作
+
+boost::timed_mutex 需要额外的动态链接库 -lpthread
+
+boost::unique_lock<boost::shared_mutex> unique_lock;
+boost::shared_lock<boost::shared_mutex> 类型的非独占锁可以在线程只对某个资源读访问的情况下使用。 
+一个线程修改的资源需要写访问，因此需要一个独占锁；
+只需要读访问的线程不需要知道同一时间其他线程是否访问，因此非独占锁可以共享一个互斥体。
+```
+
+#### 05_condition_variable
+1. 知识点
+```c++
+from: http://www.cplusplus.com/reference/condition_variable/condition_variable/wait/
+	The execution of the current thread 
+	(which shall have locked lck's mutex) is blocked until notified.
+	At the moment of blocking the thread, the function automatically calls lck.unlock(), 
+	allowing other locked threads to continue.
+	Once notified (explicitly, by some other thread), 
+	the function unblocks and calls lck.lock(), leaving lck in the same state 
+	as when the function was called. Then the function returns 
+	(notice that this last mutex locking may block again the thread before returning).
+```
