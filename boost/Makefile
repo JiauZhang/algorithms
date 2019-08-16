@@ -20,3 +20,6 @@ LOCK_LIB = -lpthread $(BOOST_LIB_COMMON)
 
 05_condition_variable: 05_condition_variable.cpp
 	g++ -o 05_condition_variable.o $^ $(BOOST_LIB_COMMON)
+
+06_cooperation: 06_cooperation.cpp
+	g++ -o 06_cooperation.o $^ $(BOOST_LIB_COMMON)
