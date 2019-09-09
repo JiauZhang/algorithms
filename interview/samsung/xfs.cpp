@@ -21,7 +21,7 @@ int main()
 	MatInt matrix = {
 		{ 0, 0, 0, 0, 0, 0, 0, 0 },
 		{ 0, 0, 0, 1, 1, 1, 1, 0 },
-		{ 0, 0, 0, 1, 0, 0, 0, 0 }, 
+		{ 0, 0, 0, 1, 0, 0, 1, 0 }, 
 		{ 1, 1, 0, 1, 0, 1, 1, 0 }, 
 		{ 0, 0, 0, 1, 0, 0, 1, 1 }, 
 		{ 0, 0, 1, 1, 0, 0, 0, 0 }, 
@@ -32,12 +32,12 @@ int main()
 	show_matrix(matrix);
 	
 	cout << "dfs:" << endl;
-	dfs(matrix, 0, 0, matrix.size()-1, matrix[0].size()-1);
+	dfs(matrix, 2, matrix[0].size()-1, matrix.size()-1, matrix[0].size()-1);
 	
 	cout << "bfs:" << endl;
-	bfs(matrix, 0, 0, matrix.size()-1, matrix[0].size()-1);
+	bfs(matrix, 2, matrix[0].size()-1, matrix.size()-1, matrix[0].size()-1);
 	
-	show_matrix(matrix);
+	//show_matrix(matrix);
 	
 	return 0;
 }
