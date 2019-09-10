@@ -20,6 +20,13 @@ struct position {
 
 deque<position> dq;
 
+struct Step {
+	int x, y;
+	int step;
+}; 
+
+deque<Step> dq_v2;
+
 /*
 	为了防止走重复的路，必须将走过的路置为，这里直接置 1 
 */
@@ -77,6 +84,58 @@ void bfs(MatInt &matrix, int x, int y, int ex, int ey)
 				
 			matrix[pos.x][pos.y] = bfs_cur_step;
 		} 	
+	}
+}
+
+void bfs_v2(MatInt &matrix, int x, int y, int ex, int ey)
+{
+	if (matrix.size() == 0 || matrix[0].size() == 0)
+		return;
+	
+	dq_v2.push_back({x, y, 0});
+
+	while (dq_v2.size()) {		
+		int posx = dq_v2.front().x;
+		int posy = dq_v2.front().y;
+		int step = dq_v2.front().step;
+		dq_v2.pop_front();
+			
+		if (posx == ex && posy == ey) {
+			if (bfs_cur_step<bfs_step) {
+				// cout << "step: " << bfs_cur_step << endl;
+				cout << "step: " << step << endl;
+				bfs_step = bfs_cur_step;
+			}
+			bfs_cur_step--;
+			continue;
+		}
+	
+		int x_1 = posx - 1;
+		int x_2 = posx + 1;
+		int y_1 = posy - 1;
+		int y_2 = posy + 1;
+		
+		if (x_1>=0 && !matrix[x_1][posy]) {
+			dq_v2.push_back({x_1, posy, step+1});
+			matrix[x_1][posy] = step+1;
+		}
+		
+		if (x_2<matrix.size() && !matrix[x_2][posy]){
+			dq_v2.push_back({x_2, posy, step+1});
+			matrix[x_2][posy] = step+1;
+		}
+			
+		if (y_1>=0 && !matrix[posx][y_1]) {
+			dq_v2.push_back({posx, y_1, step+1});
+			matrix[posx][y_1] = step+1;
+		}
+			
+		if (y_2<matrix[0].size() && !matrix[posx][y_2]) {
+			dq_v2.push_back({posx, y_2, step+1});
+			matrix[posx][y_2] = step+1;
+		}				
+			
+		matrix[posx][posy] = step;
 	}
 }
 
