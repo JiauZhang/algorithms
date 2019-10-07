@@ -1,3 +1,3 @@
 ### Greedy
-- [045_jump_game_II](../src/jump_game_II.cpp)
-- [055_jump_game](../src/jump_game.cpp)
+- [0045_jump_game_II](../src/0045_jump_game_II.cpp)
+- [0055_jump_game](../src/0055_jump_game.cpp)
