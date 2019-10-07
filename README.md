@@ -1,7 +1,7 @@
 ## [Coding Interview](src)
 - [Knapsack](src/knapsack)
 - [Sort](src/sort)
-- [...](src)
+- [See more...](src)
 
 ## [LeetCode](leetcode)
 - [Array](leetcode/array)
