@@ -1,4 +1,21 @@
 /*
+* Copyright(c) 2019 Jiau Zhang
+* For more information see <https://github.com/JiauZhang/algorithms>
+* 
+* This repo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation
+*
+* It is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
  * 题目描述：
  *     输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字，
  *     例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 

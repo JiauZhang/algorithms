@@ -1,4 +1,21 @@
 /*
+* Copyright(c) 2019 Jiau Zhang
+* For more information see <https://github.com/JiauZhang/algorithms>
+* 
+* This repo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation
+*
+* It is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
  * 题目描述：
  *      一只青蛙一次可以跳上1级台阶，也可以跳上2级。
  *      求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。

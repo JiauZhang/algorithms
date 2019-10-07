@@ -1,4 +1,21 @@
 /*
+* Copyright(c) 2019 Jiau Zhang
+* For more information see <https://github.com/JiauZhang/algorithms>
+* 
+* This repo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation
+*
+* It is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
  * 题目描述：
  *     输入两个整数序列，第一个序列表示栈的压入顺序，
  *     请判断第二个序列是否可能为该栈的弹出顺序。

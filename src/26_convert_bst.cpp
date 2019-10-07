@@ -1,4 +1,21 @@
 /*
+* Copyright(c) 2019 Jiau Zhang
+* For more information see <https://github.com/JiauZhang/algorithms>
+* 
+* This repo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation
+*
+* It is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
  题目描述：
      输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。
      要求不能创建任何新的结点，只能调整树中结点指针的指向。

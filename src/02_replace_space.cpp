@@ -1,4 +1,21 @@
 /*
+* Copyright(c) 2019 Jiau Zhang
+* For more information see <https://github.com/JiauZhang/algorithms>
+* 
+* This repo is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation
+*
+* It is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
 题目描述
     请实现一个函数，将一个字符串中的每个空格替换成“%20”。
     例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。

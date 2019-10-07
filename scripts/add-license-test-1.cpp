@@ -15,30 +15,13 @@
 * along with THIS repo. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <iostream>
+# Test #1
 
-using namespace std;
+## Head #1
+content #1
 
-int main()
-{
-    int N, V;
-    cin>>N>>V;
+## Head #2
+content #2
 
-    int dp[V+1];
-    for (int i=0; i<=V; i++) dp[i] = 0;
-
-    for (int i=0; i<N; i++) {
-        int v, w, s;
-        cin>>v>>w>>s;
-
-        for (int j=V; j>0; j--) {
-            for (int k=1; k<=s && k*v<=j; k++) {
-                dp[j] = max(dp[j-k*v]+k*w, dp[j]);
-            }
-        }
-    }
-
-    cout << dp[V];
-
-    return 0;
-}
+## Head #3
+content #3
