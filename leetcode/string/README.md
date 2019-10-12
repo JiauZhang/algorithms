@@ -3,3 +3,4 @@
 - [0014_longest_common_prefix](../src/0014_longest_common_prefix.cpp)
 - [0020_valid_parentheses](../src/0020_valid_parentheses.cpp)
 - [0028_implement_strstr](../src/0028_implement_strstr.cpp)
+- [0038_count_and_say](../src/0038_count_and_say.cpp)
