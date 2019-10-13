@@ -6,5 +6,6 @@
 - [0045_jump_game_II](../src/0045_jump_game_II.cpp)
 - [0053_maximum_subarray](../src/0053_maximum_subarray.cpp)
 - [0055_jump_game](../src/0055_jump_game.cpp)
+- [0066_plus_one](../src/0066_plus_one.cpp)
 - [0106_binary_tree_postorder_traversal](../src/0106_binary_tree_postorder_traversal.cpp)
 - [0169_majority_element](../src/0169_majority_element.cpp)

@@ -4,3 +4,4 @@
 - [0020_valid_parentheses](../src/0020_valid_parentheses.cpp)
 - [0028_implement_strstr](../src/0028_implement_strstr.cpp)
 - [0038_count_and_say](../src/0038_count_and_say.cpp)
+- [0058_length_of_last_word](../src/0058_length_of_last_word.cpp)
