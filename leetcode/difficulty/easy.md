@@ -17,3 +17,7 @@
 - [0067_add_binary](../src/0067_add_binary.cpp)
 - [0069_sqrtx](../src/0069_sqrtx.cpp)
 - [0070_climbing_stairs](../src/0070_climbing_stairs.cpp)
+- [0088_merge_sorted_array](../src/0088_merge_sorted_array.cpp)
+- [0100_same_tree](../src/0100_same_tree.cpp)
+- [0101_symmetric_tree](../src/0101_symmetric_tree.cpp)
+- [0104_maximum_depth_of_binary_tree](../src/0104_maximum_depth_of_binary_tree.cpp)
