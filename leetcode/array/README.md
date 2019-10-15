@@ -7,5 +7,6 @@
 - [0053_maximum_subarray](../src/0053_maximum_subarray.cpp)
 - [0055_jump_game](../src/0055_jump_game.cpp)
 - [0066_plus_one](../src/0066_plus_one.cpp)
+- [0088_merge_sorted_array](../src/0088_merge_sorted_array.cpp)
 - [0106_binary_tree_postorder_traversal](../src/0106_binary_tree_postorder_traversal.cpp)
 - [0169_majority_element](../src/0169_majority_element.cpp)
