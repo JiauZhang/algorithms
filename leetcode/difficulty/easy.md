@@ -26,3 +26,7 @@
 - [0108_convert_sorted_array_to_binary_search_tree](../src/0108_convert_sorted_array_to_binary_search_tree.cpp)
 - [0110_balanced_binary_tree](../src/0110_balanced_binary_tree.cpp)
 - [0111_minimum_depth_of_binary_tree](../src/0111_minimum_depth_of_binary_tree.cpp)
+- [0112_path_sum](../src/0112_path_sum.cpp)
+- [0118_pascals_triangle](../src/0118_pascals_triangle.cpp)
+- [0119_pascals_triangle_ii](../src/0119_pascals_triangle_ii.cpp)
+- [0121_best_time_to_buy_and_sell_stock](../src/0121_best_time_to_buy_and_sell_stock.cpp)

@@ -10,4 +10,6 @@
 - [0088_merge_sorted_array](../src/0088_merge_sorted_array.cpp)
 - [0106_binary_tree_postorder_traversal](../src/0106_binary_tree_postorder_traversal.cpp)
 - [0118_pascals_triangle](../src/0118_pascals_triangle.cpp)
+- [0119_pascals_triangle_ii](../src/0119_pascals_triangle_ii.cpp)
+- [0121_best_time_to_buy_and_sell_stock](../src/0121_best_time_to_buy_and_sell_stock.cpp)
 - [0169_majority_element](../src/0169_majority_element.cpp)
