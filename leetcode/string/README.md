@@ -6,3 +6,4 @@
 - [0038_count_and_say](../src/0038_count_and_say.cpp)
 - [0058_length_of_last_word](../src/0058_length_of_last_word.cpp)
 - [0067_add_binary](../src/0067_add_binary.cpp)
+- [0125_valid_palindrome](../src/0125_valid_palindrome.cpp)
