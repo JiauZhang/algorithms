@@ -32,3 +32,5 @@
 - [0121_best_time_to_buy_and_sell_stock](../src/0121_best_time_to_buy_and_sell_stock.cpp)
 - [0122_best_time_to_buy_and_sell_stock_ii](../src/0122_best_time_to_buy_and_sell_stock_ii.cpp)
 - [0125_valid_palindrome](../src/0125_valid_palindrome.cpp)
+- [0136_single_number](../src/0136_single_number.cpp)
+- [0141_linked_list_cycle](../src/0141_linked_list_cycle.cpp)
