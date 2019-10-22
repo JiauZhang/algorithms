@@ -34,3 +34,6 @@
 - [0125_valid_palindrome](../src/0125_valid_palindrome.cpp)
 - [0136_single_number](../src/0136_single_number.cpp)
 - [0141_linked_list_cycle](../src/0141_linked_list_cycle.cpp)
+- [0155_min_stack](../src/0155_min_stack.cpp)
+- [0160_intersection_of_two_linked_lists](../src/0160_intersection_of_two_linked_lists.cpp)
+- [0167_two_sum_ii](../src/0167_two_sum_ii.cpp)
