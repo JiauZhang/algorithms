@@ -6,3 +6,4 @@
 - [0069_sqrtx](../src/0069_sqrtx.cpp)
 - [0149_max_points_on_a_line](../src/0149_max_points_on_a_line.cpp)
 - [0168_excel_sheet_column_title](../src/0168_excel_sheet_column_title.cpp)
+- [0172_factorial_trailling_zeros](../src/0172_factorial_trailling_zeros.cpp)
