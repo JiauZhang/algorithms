@@ -40,3 +40,6 @@
 - [0168_excel_sheet_column_title](../src/0168_excel_sheet_column_title.cpp)
 - [0169_majority_element](../src/0169_majority_element.cpp)
 - [0172_factorial_trailling_zeros](../src/0172_factorial_trailling_zeros.cpp)
+- [0189_rotate_array](../src/0189_rotate_array.cpp)
+- [0190_reverse_bits](../src/0190_reverse_bits.cpp)
+- [0191_number_of_1_bits](../src/0191_number_of_1_bits.cpp)

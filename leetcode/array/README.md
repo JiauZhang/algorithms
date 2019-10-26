@@ -15,3 +15,4 @@
 - [0122_best_time_to_buy_and_sell_stock_ii](../src/0122_best_time_to_buy_and_sell_stock_ii.cpp)
 - [0167_two_sum_ii](../src/0167_two_sum_ii.cpp)
 - [0169_majority_element](../src/0169_majority_element.cpp)
+- [0189_rotate_array](../src/0189_rotate_array.cpp)
