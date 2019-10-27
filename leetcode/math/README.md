@@ -8,3 +8,4 @@
 - [0168_excel_sheet_column_title](../src/0168_excel_sheet_column_title.cpp)
 - [0172_factorial_trailling_zeros](../src/0172_factorial_trailling_zeros.cpp)
 - [0202_happy_numbers](../src/0202_happy_numbers.cpp)
+- [0204_count_primes](../src/0204_count_primes.cpp)

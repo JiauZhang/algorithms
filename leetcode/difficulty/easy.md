@@ -45,3 +45,5 @@
 - [0191_number_of_1_bits](../src/0191_number_of_1_bits.cpp)
 - [0198_house_robber](../src/0198_house_robber.cpp)
 - [0202_happy_numbers](../src/0202_happy_numbers.cpp)
+- [0203_remove_linked_list_elements](../src/0203_remove_linked_list_elements.cpp)
+- [0204_count_primes](../src/0204_count_primes.cpp)
