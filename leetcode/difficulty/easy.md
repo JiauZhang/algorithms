@@ -43,3 +43,5 @@
 - [0189_rotate_array](../src/0189_rotate_array.cpp)
 - [0190_reverse_bits](../src/0190_reverse_bits.cpp)
 - [0191_number_of_1_bits](../src/0191_number_of_1_bits.cpp)
+- [0198_house_robber](../src/0198_house_robber.cpp)
+- [0202_happy_numbers](../src/0202_happy_numbers.cpp)
