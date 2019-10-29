@@ -48,3 +48,5 @@
 - [0203_remove_linked_list_elements](../src/0203_remove_linked_list_elements.cpp)
 - [0204_count_primes](../src/0204_count_primes.cpp)
 - [0205_isomorphic_strings](../src/0205_isomorphic_strings.cpp)
+- [0206_reverse_linked_list](../src/0206_reverse_linked_list.cpp)
+- [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)

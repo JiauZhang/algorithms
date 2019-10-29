@@ -5,3 +5,4 @@
 - [0202_happy_numbers](../src/0202_happy_numbers.cpp)
 - [0204_count_primes](../src/0204_count_primes.cpp)
 - [0205_isomorphic_strings](../src/0205_isomorphic_strings.cpp)
+- [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
