@@ -50,3 +50,5 @@
 - [0205_isomorphic_strings](../src/0205_isomorphic_strings.cpp)
 - [0206_reverse_linked_list](../src/0206_reverse_linked_list.cpp)
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
+- [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
+- [0225_implement_stack_using_queues](../src/0225_implement_stack_using_queues.cpp)
