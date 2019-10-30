@@ -52,3 +52,6 @@
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
 - [0225_implement_stack_using_queues](../src/0225_implement_stack_using_queues.cpp)
+- [0226_invert_binary_tree](../src/0226_invert_binary_tree.cpp)
+- [0231_power_of_two](../src/0231_power_of_two.cpp)
+- [0232_implement_queue_using_stacks](../src/0232_implement_queue_using_stacks.cpp)

@@ -9,3 +9,4 @@
 - [0172_factorial_trailling_zeros](../src/0172_factorial_trailling_zeros.cpp)
 - [0202_happy_numbers](../src/0202_happy_numbers.cpp)
 - [0204_count_primes](../src/0204_count_primes.cpp)
+- [0231_power_of_two](../src/0231_power_of_two.cpp)
