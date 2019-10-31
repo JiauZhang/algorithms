@@ -11,4 +11,5 @@
 - [0144_binary_tree_preorder_traversal](../src/0144_binary_tree_preorder_traversal.cpp)
 - [0222_count_complete_tree_nodes](../src/0222_count_complete_tree_nodes.cpp)
 - [0226_invert_binary_tree](../src/0226_invert_binary_tree.cpp)
+- [0235_lowest_common_ancestor_of_a_binary_search_tree](../src/0235_lowest_common_ancestor_of_bst.cpp)
 - [0617_merge_two_binary_trees](../src/0617_merge_two_binary_trees.cpp)

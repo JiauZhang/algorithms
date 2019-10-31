@@ -7,3 +7,5 @@
 - [0160_intersection_of_two_linked_lists](../src/0160_intersection_of_two_linked_lists.cpp)
 - [0203_remove_linked_list_elements](../src/0203_remove_linked_list_elements.cpp)
 - [0206_reverse_linked_list](../src/0206_reverse_linked_list.cpp)
+- [0234_palindrome_linked_list](../src/0234_palindrome_linked_list.cpp)
+- [0237_delete_node_in_a_linked_list](../src/0237_delete_node_in_a_linked_list.cpp)
