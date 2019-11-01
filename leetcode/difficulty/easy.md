@@ -55,3 +55,4 @@
 - [0226_invert_binary_tree](../src/0226_invert_binary_tree.cpp)
 - [0231_power_of_two](../src/0231_power_of_two.cpp)
 - [0232_implement_queue_using_stacks](../src/0232_implement_queue_using_stacks.cpp)
+- [0242_valid_anagram](../src/0242_valid_anagram.cpp)

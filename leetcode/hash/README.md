@@ -7,3 +7,4 @@
 - [0205_isomorphic_strings](../src/0205_isomorphic_strings.cpp)
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
+- [0242_valid_anagram](../src/0242_valid_anagram.cpp)
