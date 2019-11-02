@@ -59,3 +59,4 @@
 - [0235_lowest_common_ancestor_of_a_binary_search_tree](../src/0235_lowest_common_ancestor_of_bst.cpp)
 - [0237_delete_node_in_a_linked_list](../src/0237_delete_node_in_a_linked_list.cpp)
 - [0242_valid_anagram](../src/0242_valid_anagram.cpp)
+- [0257_binary_tree_paths](../src/0257_binary_tree_paths.cpp)

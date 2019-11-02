@@ -7,3 +7,4 @@
 - [0110_balanced_binary_tree](../src/0110_balanced_binary_tree.cpp)
 - [0111_minimum_depth_of_binary_tree](../src/0111_minimum_depth_of_binary_tree.cpp)
 - [0112_path_sum](../src/0112_path_sum.cpp)
+- [0257_binary_tree_paths](../src/0257_binary_tree_paths.cpp)
