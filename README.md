@@ -1,6 +1,6 @@
 ## 微信公众号
 <div align="center"> 
-<img src="https://images.cnblogs.com/cnblogs_com/jiau/1570086/o_qrcode_for_gh_2be37ba649c4_344.jpg" > 
+<img src="https://images.cnblogs.com/cnblogs_com/jiau/1570086/o_qrcode_for_gh_2be37ba649c4_344.jpg" width="25%"> 
 </div>
 
 ## 前言
@@ -13,12 +13,12 @@
 为了能够降低刷题每天占用的时间，那么我们能做的就是提早布局啥题任务，为将来找工作提早做准备，
 这样即使每天只做一道题，根据一份工作大致`1~2`年的时间来算，那么在找下一份工作时也会刷了`300~600`道题了。
 
-## [剑指 Offer](src)
+## 剑指 Offer
 - [背包问题](src/knapsack)
 - [排序](src/sort)
 - [MORE...](src)
 
-## [LeetCode](leetcode)
+## LeetCode
 - [数组](leetcode/array)
 - [动态规划](leetcode/dp)
 - [树](leetcode/tree)
@@ -36,7 +36,7 @@
 - [二叉搜索树](leetcode/bst)
 - [MORE...](leetcode)
 
-## [Boost 多线程编程](boost)
+## Boost 多线程编程
 - [基本线程](boost/01_basic_thread.cpp)
 - [中断线程](boostt/02_interrupt_thread.cpp)
 - [互斥信号量](boost/03_mutex.cpp)
