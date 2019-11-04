@@ -10,3 +10,6 @@
 - [0202_happy_numbers](../src/0202_happy_numbers.cpp)
 - [0204_count_primes](../src/0204_count_primes.cpp)
 - [0231_power_of_two](../src/0231_power_of_two.cpp)
+- [0258_add_digits](../src/0258_add_digits.cpp)
+- [0263_ugly_number](../src/0263_ugly_number.cpp)
+- [0268_missing_number](../src/0268_missing_number.cpp)

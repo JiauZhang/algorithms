@@ -18,3 +18,4 @@
 - [0189_rotate_array](../src/0189_rotate_array.cpp)
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
+- [0268_missing_number](../src/0268_missing_number.cpp)
