@@ -7,3 +7,4 @@
 - [0141_linked_list_cycle](../src/0141_linked_list_cycle.cpp)
 - [0167_two_sum_ii](../src/0167_two_sum_ii.cpp)
 - [0234_palindrome_linked_list](../src/0234_palindrome_linked_list.cpp)
+- [0283_move_zeroes](../src/0283_move_zeroes.cpp)

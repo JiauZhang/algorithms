@@ -19,3 +19,4 @@
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
 - [0268_missing_number](../src/0268_missing_number.cpp)
+- [0283_move_zeroes](../src/0283_move_zeroes.cpp)

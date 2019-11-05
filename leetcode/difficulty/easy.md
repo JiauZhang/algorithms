@@ -62,3 +62,6 @@
 - [0257_binary_tree_paths](../src/0257_binary_tree_paths.cpp)
 - [0258_add_digits](../src/0258_add_digits.cpp)
 - [0263_ugly_number](../src/0263_ugly_number.cpp)
+- [0278_first_bad_version](../src/0278_first_bad_version.cpp)
+- [0283_move_zeroes](../src/0283_move_zeroes.cpp)
+- [0290_word_pattern](../src/0290_word_pattern.cpp)

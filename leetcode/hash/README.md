@@ -8,3 +8,4 @@
 - [0217_contains_duplicate](../src/0217_contains_duplicate.cpp)
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
 - [0242_valid_anagram](../src/0242_valid_anagram.cpp)
+- [0290_word_pattern](../src/0290_word_pattern.cpp)
