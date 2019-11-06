@@ -9,3 +9,4 @@
 - [0219_contains_duplicate_ii](../src/0219_contains_duplicate_ii.cpp)
 - [0242_valid_anagram](../src/0242_valid_anagram.cpp)
 - [0290_word_pattern](../src/0290_word_pattern.cpp)
+- [0299_bulls_and_cows](../src/0299_bulls_and_cows.cpp)

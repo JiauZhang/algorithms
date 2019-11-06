@@ -65,3 +65,5 @@
 - [0278_first_bad_version](../src/0278_first_bad_version.cpp)
 - [0283_move_zeroes](../src/0283_move_zeroes.cpp)
 - [0290_word_pattern](../src/0290_word_pattern.cpp)
+- [0292_nim_game](../src/0292_nim_game.cpp)
+- [0299_bulls_and_cows](../src/0299_bulls_and_cows.cpp)
