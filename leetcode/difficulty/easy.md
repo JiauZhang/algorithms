@@ -67,3 +67,8 @@
 - [0290_word_pattern](../src/0290_word_pattern.cpp)
 - [0292_nim_game](../src/0292_nim_game.cpp)
 - [0299_bulls_and_cows](../src/0299_bulls_and_cows.cpp)
+- [0303_range_sum_query_immutable](../src/0303_range_sum_query_immutable.cpp)
+- [0326_power_of_three](../src/0326_power_of_three.cpp)
+- [0342_power_of_four](../src/0342_power_of_four.cpp)
+- [0344_reverse_string](../src/0344_reverse_string.cpp)
+- [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)

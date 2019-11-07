@@ -13,3 +13,4 @@
 - [0258_add_digits](../src/0258_add_digits.cpp)
 - [0263_ugly_number](../src/0263_ugly_number.cpp)
 - [0268_missing_number](../src/0268_missing_number.cpp)
+- [0326_power_of_three](../src/0326_power_of_three.cpp)

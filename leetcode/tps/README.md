@@ -8,3 +8,5 @@
 - [0167_two_sum_ii](../src/0167_two_sum_ii.cpp)
 - [0234_palindrome_linked_list](../src/0234_palindrome_linked_list.cpp)
 - [0283_move_zeroes](../src/0283_move_zeroes.cpp)
+- [0344_reverse_string](../src/0344_reverse_string.cpp)
+- [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)

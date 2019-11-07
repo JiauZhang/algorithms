@@ -7,3 +7,5 @@
 - [0058_length_of_last_word](../src/0058_length_of_last_word.cpp)
 - [0067_add_binary](../src/0067_add_binary.cpp)
 - [0125_valid_palindrome](../src/0125_valid_palindrome.cpp)
+- [0344_reverse_string](../src/0344_reverse_string.cpp)
+- [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)

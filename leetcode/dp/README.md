@@ -4,3 +4,4 @@
 - [0121_best_time_to_buy_and_sell_stock](../src/0121_best_time_to_buy_and_sell_stock.cpp)
 - [0198_house_robber](../src/0198_house_robber.cpp)
 - [0300_longest_increasing_subsequence](../src/0300_longest_increasing_subsequence.cpp)
+- [0303_range_sum_query_immutable](../src/0303_range_sum_query_immutable.cpp)
