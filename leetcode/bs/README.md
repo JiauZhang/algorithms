@@ -5,3 +5,6 @@
 - [0222_count_complete_tree_nodes](../src/0222_count_complete_tree_nodes.cpp)
 - [0278_first_bad_version](../src/0278_first_bad_version.cpp)
 - [0300_longest_increasing_subsequence](../src/0300_longest_increasing_subsequence.cpp)
+- [0349_intersection_of_two_arrays](../src/0349_intersection_of_two_arrays.cpp)
+- [0350_intersection_of_two_arrays_ii](../src/0350_intersection_of_two_arrays_ii.cpp)
+- [0367_valid_perfect_square](../src/0367_valid_perfect_square.cpp)

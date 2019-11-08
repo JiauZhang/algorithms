@@ -14,3 +14,4 @@
 - [0263_ugly_number](../src/0263_ugly_number.cpp)
 - [0268_missing_number](../src/0268_missing_number.cpp)
 - [0326_power_of_three](../src/0326_power_of_three.cpp)
+- [0367_valid_perfect_square](../src/0367_valid_perfect_square.cpp)

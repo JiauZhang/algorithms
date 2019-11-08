@@ -10,3 +10,5 @@
 - [0283_move_zeroes](../src/0283_move_zeroes.cpp)
 - [0344_reverse_string](../src/0344_reverse_string.cpp)
 - [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)
+- [0349_intersection_of_two_arrays](../src/0349_intersection_of_two_arrays.cpp)
+- [0350_intersection_of_two_arrays_ii](../src/0350_intersection_of_two_arrays_ii.cpp)
