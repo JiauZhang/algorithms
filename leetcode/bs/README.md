@@ -8,3 +8,4 @@
 - [0349_intersection_of_two_arrays](../src/0349_intersection_of_two_arrays.cpp)
 - [0350_intersection_of_two_arrays_ii](../src/0350_intersection_of_two_arrays_ii.cpp)
 - [0367_valid_perfect_square](../src/0367_valid_perfect_square.cpp)
+- [0374_guess_number_higher_or_lower](../src/0374_guess_number_higher_or_lower.cpp)

@@ -6,3 +6,4 @@
 - [0231_power_of_two](../src/0231_power_of_two.cpp)
 - [0268_missing_number](../src/0268_missing_number.cpp)
 - [0342_power_of_four](../src/0342_power_of_four.cpp)
+- [0371_sum_of_two_integers](../src/0371_sum_of_two_integers.cpp)

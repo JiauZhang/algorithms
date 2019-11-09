@@ -9,3 +9,4 @@
 - [0125_valid_palindrome](../src/0125_valid_palindrome.cpp)
 - [0344_reverse_string](../src/0344_reverse_string.cpp)
 - [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)
+- [0383_ransom_note](../src/0383_ransom_note.cpp)
