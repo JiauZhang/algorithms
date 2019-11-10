@@ -10,3 +10,4 @@
 - [0344_reverse_string](../src/0344_reverse_string.cpp)
 - [0345_reverse_vowels_of_a_string](../src/0345_reverse_vowels_of_a_string.cpp)
 - [0383_ransom_note](../src/0383_ransom_note.cpp)
+- [0387_first_unique_character_in_a_string](../src/0387_first_unique_character_in_a_string.cpp)
