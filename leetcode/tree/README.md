@@ -14,3 +14,4 @@
 - [0235_lowest_common_ancestor_of_a_binary_search_tree](../src/0235_lowest_common_ancestor_of_bst.cpp)
 - [0617_merge_two_binary_trees](../src/0617_merge_two_binary_trees.cpp)
 - [0257_binary_tree_paths](../src/0257_binary_tree_paths.cpp)
+- [0404_sum_of_left_leaves](../src/0404_sum_of_left_leaves.cpp)
