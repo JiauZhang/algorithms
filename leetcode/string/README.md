@@ -12,3 +12,5 @@
 - [0383_ransom_note](../src/0383_ransom_note.cpp)
 - [0387_first_unique_character_in_a_string](../src/0387_first_unique_character_in_a_string.cpp)
 - [0415_add_strings](../src/0415_add_strings.cpp)
+- [0434_number_of_segments_in_a_string](../src/0434_number_of_segments_in_a_string.cpp)
+- [0443_string_compression](../src/0443_string_compression.cpp)
