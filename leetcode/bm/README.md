@@ -10,3 +10,4 @@
 - [0389_find_the_difference](../src/0389_find_the_difference.cpp)
 - [0401_binary_watch](../src/0401_binary_watch.cpp)
 - [0405_convert_a_number_to_hex](../src/0405_convert_a_number_to_hex.cpp)
+- [0461_hamming_distance](../src/0461_hamming_distance.cpp)
