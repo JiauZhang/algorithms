@@ -11,3 +11,4 @@
 - [0374_guess_number_higher_or_lower](../src/0374_guess_number_higher_or_lower.cpp)
 - [0392_is_subsequence](../src/0392_is_subsequence.cpp)
 - [0441_arranging_coins](../src/0441_arranging_coins.cpp)
+- [0475_heaters](../src/0475_heaters.cpp)
