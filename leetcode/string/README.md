@@ -15,3 +15,4 @@
 - [0434_number_of_segments_in_a_string](../src/0434_number_of_segments_in_a_string.cpp)
 - [0443_string_compression](../src/0443_string_compression.cpp)
 - [0459_repeated_substring_pattern](../src/0459_repeated_substring_pattern.cpp)
+- [0482_license_key_formatting](../src/0482_license_key_formatting.cpp)
