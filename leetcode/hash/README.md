@@ -17,3 +17,4 @@
 - [0409_longest_palindrome](../src/0409_longest_palindrome.cpp)
 - [0447_number_of_boomerangs](../src/0447_number_of_boomerangs.cpp)
 - [0463_island_perimeter](../src/0463_island_perimeter.cpp)
+- [0500_keyboard_row](../src/0500_keyboard_row.cpp)
