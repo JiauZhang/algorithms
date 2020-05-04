@@ -17,3 +17,4 @@
 - [0367_valid_perfect_square](../src/0367_valid_perfect_square.cpp)
 - [0441_arranging_coins](../src/0441_arranging_coins.cpp)
 - [0453_minimum_moves_to_equal_array_elements](../src/0453_minimum_moves_to_equal_array_elements.cpp)
+- [0507_perfect_number](../src/0507_perfect_number.cpp)
