@@ -24,21 +24,21 @@ public:
         int min = INT_MAX;
         TreeNode *prev = nullptr;
 
-        find_min(root, prev, min);
+        find_min(root, &prev, min);
 
         return min;
     }
 
-    void find_min(TreeNode *root, TreeNode *prev, int &min) {
+    void find_min(TreeNode *root, TreeNode **prev, int &min) {
         if (root->left)
             find_min(root->left, prev, min);
 
-        if (prev) {
-            int tmp = root->val - prev->val;
+        if (*prev) {
+            int tmp = root->val - (*prev)->val;
             min = tmp > min ? min : tmp;
         }
 
-        prev = root;
+        *prev = root;
 
         if (root->right)
             find_min(root->right, prev, min);
