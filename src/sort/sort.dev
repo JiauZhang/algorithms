@@ -28,8 +28,8 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=8
+CompilerSettings=0000000000000000001000000
+UnitCount=9
 
 [VersionInfo]
 Major=1
@@ -122,6 +122,16 @@ BuildCmd=
 
 [Unit8]
 FileName=merge.hpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=sort_link.hpp
 CompileCpp=1
 Folder=
 Compile=1

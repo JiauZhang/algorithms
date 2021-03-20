@@ -8,7 +8,6 @@ struct Node {
 
 typedef int Compare(Node *, Node *);
 
-
 struct Data {
 	int val;
 };
@@ -22,7 +21,8 @@ Node *head = 0;
 void print_nodes(Node *head)
 {
 	while (head) {
-		printf("head: %d, hn: %d, hp: %d, data: %d\n", head, head->next, head->prev, head->data);
+		Data *d = (Data *)head->data;
+		printf("head: %d, hn: %d, hp: %d, data: [%d]=%d\n", head, head->next, head->prev, head->data, d->val);
 		head = head->next;
 	}
 }
@@ -36,26 +36,11 @@ void print_data(Data *data, int lenght)
 	printf("\n");
 }
 
-void replace_node(Node *n, Node *prev, Node *next)
-{
-	n->next = next;
-	n->prev = prev;
-	
-	if (prev)
-		prev->next = n;
-	if (next)
-		next->prev = n;
-}
-
 void swap_node(Node *n1, Node *n2)
-{
-	Node *n1next = n1->next;
-	Node *n1prev = n1->prev;
-	Node *n2next = n2->next;
-	Node *n2prev = n2->prev;
-	
-	replace_node(n1, n2prev, n2next);
-	replace_node(n2, n1prev, n1next);
+{	
+	void *data = n1->data;
+	n1->data = n2->data;
+	n2->data = data;
 }
 
 Node *partition(Node *start, Node *end, Compare *compare)
@@ -66,12 +51,15 @@ Node *partition(Node *start, Node *end, Compare *compare)
 	while (fast != end) {
 		if (compare(fast, start)) {
 			slow = slow->next;
-			swap_node(slow, fast);
-			print_nodes(head);
+			if (slow != fast)
+				swap_node(slow, fast);
 		}
 		
 		fast = fast->next;
 	}
+	swap_node(slow, start);
+	
+	return slow;
 }
 
 void qsort(Node *start, Node *end, Compare *compare)
@@ -100,7 +88,7 @@ int compare_data(Node *n1, Node *n2)
 {
 	Data *d1 = (Data *)n1->data;
 	Data *d2 = (Data *)n2->data;
-	return d1->val < d2->val;
+	return d1->val > d2->val;
 }
 
 void qsort_main()
@@ -120,6 +108,8 @@ void qsort_main()
 	print_nodes(head);
 	print_data(data, loop);
 	qsort(head, 0, compare_data);
+	print_nodes(head);
+	print_data(data, loop);
 	
 	printf("Finish qsort test...\n");
 }
