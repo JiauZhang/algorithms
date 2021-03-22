@@ -7,43 +7,35 @@ struct Node {
 };
 
 typedef int Compare(Node *, Node *);
+typedef void Swap(Node *, Node *);
 
 struct Data {
 	int val;
+	
+	Node *node; 
 };
-
-const int max = 99, min = 0;
-const int loop = 10;
-Data data[loop];
-Node nodes[loop];
-Node *head = 0;
 
 void print_nodes(Node *head)
 {
 	while (head) {
 		Data *d = (Data *)head->data;
-		printf("head: %d, hn: %d, hp: %d, data: [%d]=%d\n", head, head->next, head->prev, head->data, d->val);
+		printf("head: %d, hn: %d, hp: %d, data: [%d]=%d, node: %d\n", \
+			head, head->next, head->prev, head->data, d->val, d->node);
 		head = head->next;
 	}
+	printf("\n");
 }
 
 void print_data(Data *data, int lenght)
 {
 	for (int i=0; i<lenght; i++) {
 		Data *d = data + i;
-		printf("data: %d=%d\n", d, d->val);
+		printf("data: [%d]=%d, node: %d\n", d, d->val, d->node);
 	}
 	printf("\n");
 }
 
-void swap_node(Node *n1, Node *n2)
-{	
-	void *data = n1->data;
-	n1->data = n2->data;
-	n2->data = data;
-}
-
-Node *partition(Node *start, Node *end, Compare *compare)
+Node *partition(Node *start, Node *end, Compare *compare, Swap *swap_node)
 {
 	Node *slow = start;
 	Node *fast = start->next;
@@ -62,12 +54,12 @@ Node *partition(Node *start, Node *end, Compare *compare)
 	return slow;
 }
 
-void qsort(Node *start, Node *end, Compare *compare)
+void qsort(Node *start, Node *end, Compare *compare, Swap *swap)
 {
 	if (start != end) {
-		Node *mid = partition(start, end, compare);
-		qsort(start, mid, compare);
-		qsort(mid->next, end, compare);
+		Node *mid = partition(start, end, compare, swap);
+		qsort(start, mid, compare, swap);
+		qsort(mid->next, end, compare, swap);
 	}
 }
 
@@ -91,8 +83,26 @@ int compare_data(Node *n1, Node *n2)
 	return d1->val > d2->val;
 }
 
+void swap_data(Node *n1, Node *n2)
+{	
+	void *data = n1->data;
+	n1->data = n2->data;
+	n2->data = data;
+	
+	Data *d1 = (Data *)n1->data;
+	Data *d2 = (Data *)n2->data;
+	d1->node = n1;
+	d2->node = n2;
+}
+
 void qsort_main()
 {
+	const int max = 99, min = 0;
+	const int loop = 10;
+	Data data[loop];
+	Node nodes[loop];
+	Node *head = 0;
+	
 	printf("Start qsort test...\n");
 
 	for (int i=0; i<loop; i++) {
@@ -101,13 +111,14 @@ void qsort_main()
 		
 		Node *node = nodes + i;
 		node->data = d;
+		d->node = node;
 		
 		head = insert_node(head, node);
 	}
 	
 	print_nodes(head);
 	print_data(data, loop);
-	qsort(head, 0, compare_data);
+	qsort(head, 0, compare_data, swap_data);
 	print_nodes(head);
 	print_data(data, loop);
 	
