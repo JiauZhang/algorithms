@@ -40,6 +40,8 @@
 *     同样按照根节点、左子树、右子树的思路做，不同的是，我们访问的
 *     都是同一棵树，并且用一棵树的左子树与一棵树的右子树进行比较
 *     这样就好比做了一次对称，如果他们完全相同，那么这个树就是对称的
+*
+*     另一种方法就是非递归操作，只需要使用迭代的方式记录节点并比较是否是镜像即可
 */
 
 /**
@@ -51,25 +53,53 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
 class Solution {
 public:
     bool isSymmetric(TreeNode* root) {
-        return do_symmetric(root, root);
-    }
-
-    bool do_symmetric(TreeNode *left, TreeNode *right) {
-        if (left == NULL && right == NULL)
+        if (root == nullptr)
             return true;
-        if (left == NULL || right == NULL)
-            return false;
+        
+        // return do_work(root->left, root->right);
 
-        bool res = (left->val == right->val);
-        if (!res)
-            return false;
-        res = do_symmetric(left->left, right->right);
-        if (!res)
-            return false;
-        res = do_symmetric(left->right, right->left);
-        return res;
+        TreeNode *left = root->left, *right = root->right;
+        queue<TreeNode *> ls, rs;
+        ls.push(left);
+        rs.push(right);
+
+        while (!ls.empty()) {
+            left = ls.front();
+            ls.pop();
+            right = rs.front();
+            rs.pop();
+
+            if (left == nullptr && right == nullptr)
+                continue;
+        
+            if (left == nullptr || right == nullptr)
+                return false;
+            
+            if (left->val != right->val)
+                return false;
+            
+            ls.push(left->right);
+            ls.push(left->left);
+            rs.push(right->left);
+            rs.push(right->right);
+        }
+
+        return true;
     }
-};
+
+    bool do_work(TreeNode *left, TreeNode *right) {
+        if (left == nullptr && right == nullptr)
+            return true;
+        
+        if (left == nullptr || right == nullptr)
+            return false;
+        
+        if (left->val != right->val)
+            return false;
+        
+        return do_work(left->left, right->right) && do_work(left->right, right->left);
+    }
