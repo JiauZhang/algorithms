@@ -1,5 +1,7 @@
 ### Array
 - [0001_two_sum](../src/0001_two_sum.cpp)
+- [0015_3sum](./0015_3sum.cpp)
+- [0016_3sum_closest](./0015_3sum_closest.cpp)
 - [0026_remove_duplicates_from_sorted_array](../src/0026_remove_duplicates_from_sorted_array.cpp)
 - [0027_remove_element](../src/0027_remove_element.cpp)
 - [0035_search_insert_position](../src/0035_search_insert_position.cpp)
