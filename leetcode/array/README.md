@@ -1,9 +1,10 @@
 ### Array
 - [0001_two_sum](../src/0001_two_sum.cpp)
 - [0015_3sum](./0015_3sum.cpp)
-- [0016_3sum_closest](./0015_3sum_closest.cpp)
+- [0016_3sum_closest](./0016_3sum_closest.cpp)
 - [0026_remove_duplicates_from_sorted_array](../src/0026_remove_duplicates_from_sorted_array.cpp)
 - [0027_remove_element](../src/0027_remove_element.cpp)
+- [0031_next_permutation](./0031_next_permutation.cpp)
 - [0035_search_insert_position](../src/0035_search_insert_position.cpp)
 - [0045_jump_game_II](../src/0045_jump_game_II.cpp)
 - [0053_maximum_subarray](../src/0053_maximum_subarray.cpp)

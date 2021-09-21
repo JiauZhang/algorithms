@@ -1,4 +1,5 @@
 ### Binary Search
+- [0033_search_in_rotated_sorted_array](./0033_search_in_rotated_sorted_array.cpp)
 - [0035_search_insert_position](../src/0035_search_insert_position.cpp)
 - [0069_sqrtx](../src/0069_sqrtx.cpp)
 - [0167_two_sum_ii](../src/0167_two_sum_ii.cpp)
