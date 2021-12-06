@@ -6,3 +6,4 @@
 - [0300_longest_increasing_subsequence](../src/0300_longest_increasing_subsequence.cpp)
 - [0303_range_sum_query_immutable](../src/0303_range_sum_query_immutable.cpp)
 - [0392_is_subsequence](../src/0392_is_subsequence.cpp)
+- [0416-partition-equal-subset-sum](./0416-partition-equal-subset-sum.cpp)
